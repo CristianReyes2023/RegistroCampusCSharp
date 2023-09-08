@@ -60,7 +60,7 @@ internal class Program
                 int option2;
                 do{
                     Estudiantes estudiantes = new Estudiantes();
-                    Console.WriteLine("Ingresa el codigo del estudiante");
+                    Console.WriteLine("Ingresa el codigo del estudiante: ");
                     estudiantes.Id = Console.ReadLine();
                     if(estudiantes.Id.Length >= 15){
                         Console.WriteLine("Sobre pasa el numero de caracteres (15)");
@@ -94,10 +94,14 @@ internal class Program
                         AddInfo = false;
                         break;
                     }
+                    Console.Clear();
                     ListaEstudiante.Add(estudiantes);
                     Console.WriteLine("Desea agregar otro estudiante:");
                     Console.WriteLine("1. Para agregar otro");
                     Console.WriteLine("2. Para salir.");
+                    estudiantes.Quices = new List<float>{0,0,0,0};
+                    estudiantes.Trabajos = new List<float>{0,0};
+                    estudiantes.Parciales = new List<float>{0,0,0};
                     option2 = int.Parse(Console.ReadLine());
                     if ( option2 == 1){
                         AddInfo = true;
@@ -106,6 +110,7 @@ internal class Program
                     }
                     Console.Clear();
                 }while(AddInfo);
+                Console.Clear();
             }
             if ( option == 2){
                 Console.WriteLine("Buscar por: ");
@@ -115,9 +120,10 @@ internal class Program
                 if(option == 1){
                     Console.WriteLine("Ingresa codigo: ");
                     string codigoBusqueda = Console.ReadLine();
-                    for ( int i=0;i<=ListaEstudiante.Count; i++){
+                    Console.WriteLine("{0,-20} {1,-45} {2,-45} {3,-10} {4,-40} {5,-45} {6,-10} {7,-40}","Codigo estudiante","Nombre estudiante","Email Estudiante","Edad Estudiante","Dirección estudiante","QUICES","Trabajos","Parciales");
+                    for ( int i=0 ; i < ListaEstudiante.Count; i++){
                         if(ListaEstudiante[i].Id == codigoBusqueda){
-                            Console.WriteLine(ListaEstudiante[i]);
+                            Console.WriteLine("{0,-20} {1,-45} {2,-45} {3,-10} {4,-40} {5,-10} {6,-10} {7,-10} {8,-10} {9,-10} {10,-10} {11,-10} {12,-10} {13,-10}",ListaEstudiante[i].Id,ListaEstudiante[i].Nombre,ListaEstudiante[i].Email,ListaEstudiante[i].Edad,ListaEstudiante[i].Direccion,ListaEstudiante[i].Quices[0],ListaEstudiante[i].Quices[1],ListaEstudiante[i].Quices[2],ListaEstudiante[i].Quices[3],ListaEstudiante[i].Trabajos[0],ListaEstudiante[i].Trabajos[1],ListaEstudiante[i].Parciales[0],ListaEstudiante[i].Parciales[1],ListaEstudiante[i].Parciales[2]);
                             Console.ReadLine();
                         }
                     }

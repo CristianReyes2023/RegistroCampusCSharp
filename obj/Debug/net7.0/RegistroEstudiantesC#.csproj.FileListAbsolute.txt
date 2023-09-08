@@ -26,3 +26,17 @@ E:\Cristian2\Cristian\Programación\CAMPUSLAND\C#\RegistroEstudiantesC#\obj\Debu
 E:\Cristian2\Cristian\Programación\CAMPUSLAND\C#\RegistroEstudiantesC#\obj\Debug\net7.0\RegistroEstudiantesC#.pdb
 E:\Cristian2\Cristian\Programación\CAMPUSLAND\C#\RegistroEstudiantesC#\obj\Debug\net7.0\RegistroEstudiantesC#.genruntimeconfig.cache
 E:\Cristian2\Cristian\Programación\CAMPUSLAND\C#\RegistroEstudiantesC#\obj\Debug\net7.0\ref\RegistroEstudiantesC#.dll
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\bin\Debug\net7.0\RegistroEstudiantesC#.exe
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\bin\Debug\net7.0\RegistroEstudiantesC#.deps.json
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\bin\Debug\net7.0\RegistroEstudiantesC#.runtimeconfig.json
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\bin\Debug\net7.0\RegistroEstudiantesC#.dll
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\bin\Debug\net7.0\RegistroEstudiantesC#.pdb
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\obj\Debug\net7.0\RegistroEstudiantesC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\obj\Debug\net7.0\RegistroEstudiantesC#.AssemblyInfoInputs.cache
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\obj\Debug\net7.0\RegistroEstudiantesC#.AssemblyInfo.cs
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\obj\Debug\net7.0\RegistroEstudiantesC#.csproj.CoreCompileInputs.cache
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\obj\Debug\net7.0\RegistroEstudiantesC#.dll
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\obj\Debug\net7.0\refint\RegistroEstudiantesC#.dll
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\obj\Debug\net7.0\RegistroEstudiantesC#.pdb
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\obj\Debug\net7.0\RegistroEstudiantesC#.genruntimeconfig.cache
+C:\Users\APM02-49\Documents\CristianReyes\C#\RegistroCampusCSharp\obj\Debug\net7.0\ref\RegistroEstudiantesC#.dll

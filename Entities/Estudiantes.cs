@@ -15,6 +15,9 @@ namespace RegistroEstudiantesC_.Entities
         private int edad;
         private string  direccion;//Long max 35 characters
 
+        private List<float> quices;
+        private List<float> trabajos;
+        private List<float> parciales;
         //Properties GET y SET
         public string Id
         {
@@ -41,16 +44,34 @@ namespace RegistroEstudiantesC_.Entities
             get { return direccion; }
             set { direccion = value; }
         }
-        
-                public Estudiantes()
+        public List<float> Quices
+        {
+            get { return quices; }
+            set { quices = value; }
+        }
+        public List<float> Trabajos
+        {
+            get { return trabajos; }
+            set { trabajos = value; }
+        }
+        public List<float> Parciales
+        {
+            get { return parciales; }
+            set { parciales = value; }
+        }
+        public Estudiantes()
         {
         }
-        public Estudiantes(string id,string nombre, string email, int edad, string direccion){
+        public Estudiantes(string id,string nombre, string email, int edad, string direccion,List<float> quices,List<float> trabajos,List<float> parciales ){
             this.id = id;
             this.nombre = nombre;
             this.email = email;
             this.edad = edad;
             this.direccion = direccion;
+            this.quices = quices;
+            this.trabajos = trabajos;
+            this.parciales = parciales;
+
         }
 
 
