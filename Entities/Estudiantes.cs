@@ -84,6 +84,14 @@ namespace RegistroEstudiantesC_.Entities
             }
             return true;
         }
+        public static bool SoloNumeros (string EdadEstudiante){
+            foreach (char i in EdadEstudiante){
+                if(!Char.IsLetter(i) && i != ' '){
+                    return false;
+                }
+            }
+            return true;
+        }
         
     }
 }

@@ -54,10 +54,10 @@ internal class Program
             Console.WriteLine("5. Finalizar registro.");
             Console.WriteLine("Ingresa opción: ");
             int option = int.Parse(Console.ReadLine());
+            int option2;
             Console.Clear();
             if(option == 1){
-                Console.WriteLine("Ingresa los siguientes datos del estudiante: ");
-                int option2;
+                Console.WriteLine("Ingresa los siguientes datos del estudiante.");
                 bool AddId = true;
                 bool AddNombre = true;
                 bool AddEmail = true;
@@ -75,7 +75,7 @@ internal class Program
                             Console.Clear();
                             Console.WriteLine("Ingresa nuevamente el codigo del estudiante: ");
                         }else if(!int.TryParse(estudiantes.Id,out int numero)){
-                            Console.WriteLine("Agregar solo numeros y no otro tiepo de datos.");
+                            Console.WriteLine("Agregar solo numeros y no otro tipo de datos.");
                             Console.ReadKey();
                             Console.Clear();
                             Console.WriteLine("Ingresa nuevamente el codigo del estudiante: ");
@@ -83,6 +83,7 @@ internal class Program
                             AddId = false;
                         }
                     }
+                    Console.Clear();
                     Console.WriteLine("Ingresa el nombre del estudiante: ");
                     while(AddNombre){
                     estudiantes.Nombre = Console.ReadLine();
@@ -92,54 +93,70 @@ internal class Program
                             Console.Clear();
                             Console.WriteLine("Ingresa nuevamente el nombre del estudiante: ");
                         }else if(!Estudiantes.SoloLetras(estudiantes.Nombre)){
-                            Console.WriteLine("Agregar solo letras y no otro tiepo de datos.");
+                            Console.WriteLine("Agregar solo letras y no otro tipo de datos.");
                             Console.ReadKey();
                             Console.Clear();
                             Console.WriteLine("Ingresa nuevamente el nombre del estudiante: ");
                         }else{
-                            AddId = false;
+                            AddNombre = false;
                         }
                     }
-                    // Console.WriteLine("Ingreso Nombre: ");
-                    // estudiantes.Nombre = Console.ReadLine();
-                    // if(estudiantes.Nombre.Length >= 40){
-                    //     Console.WriteLine("Sobre pasa el numero de caracteres (40)");
-                    //     Console.ReadLine();
-                    //     AddInfo = false;
-                    //     break;
-                    // }
+                    Console.Clear();
                     Console.WriteLine("Ingrese Email: ");
+                    while(AddEmail){
                     estudiantes.Email = Console.ReadLine();
-                    if(estudiantes.Email.Length >= 40){
-                        Console.WriteLine("Sobre pasa el numero de caracteres (40)");
-                        Console.ReadLine();
-                        AddInfo = false;
-                        break;
-                    }
-                    Console.WriteLine("Ingrese Edad: ");
-                    estudiantes.Edad = int.Parse(Console.ReadLine());
-                    Console.WriteLine("Ingrese Direccion: ");
-                    estudiantes.Direccion = Console.ReadLine();
-                    if(estudiantes.Email.Length >= 35){
-                        Console.WriteLine("Sobre pasa el numero de caracteres (35)");
-                        Console.ReadLine();
-                        AddInfo = false;
-                        break;
+                        if(estudiantes.Email.Length >= 40){
+                            Console.WriteLine("Excede el numero de caracteres de max 40.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            Console.WriteLine("Ingresa nuevamente el Email del estudiante: ");
+                        }else{
+                            AddEmail = false;
+                        }
                     }
                     Console.Clear();
+                    Console.WriteLine("Ingrese Edad: ");
+                    while(AddEdad){
+                    // estudiantes.Edad = int.Parse(Console.ReadLine());
+                    string edadString = Console.ReadLine();
+                        if(!int.TryParse(edadString,out int numero)){
+                            Console.WriteLine("Agregar solo numeros y no otro tiepo de datos.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            Console.WriteLine("Ingresa nuevamente el Edad del estudiante: ");
+                        }else{
+                            estudiantes.Edad = Convert.ToInt32(edadString);
+                            AddEdad = false;
+                        }
+                    }
+                    Console.Clear();
+                    Console.WriteLine("Ingrese Direccion: ");
+                    while(AddDireccion){
+                    estudiantes.Direccion = Console.ReadLine();
+                        if(estudiantes.Direccion.Length >= 35){
+                            Console.WriteLine("Excede el numero de caracteres de max 350.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            Console.WriteLine("Ingresa nuevamente el Direccion del estudiante: ");
+                        }else{
+                            AddDireccion = false;
+                        }
+                    }
+                    Console.Clear();
+                    estudiantes.Quices = new List<float>{0,0,0,0};
+                    estudiantes.Trabajos = new List<float>{0,0};
+                    estudiantes.Parciales = new List<float>{0,0,0};
                     ListaEstudiante.Add(estudiantes);
                     Console.WriteLine("Desea agregar otro estudiante:");
                     Console.WriteLine("1. Para agregar otro");
                     Console.WriteLine("2. Para salir.");
-                    estudiantes.Quices = new List<float>{0,0,0,0};
-                    estudiantes.Trabajos = new List<float>{0,0};
-                    estudiantes.Parciales = new List<float>{0,0,0};
                     option2 = int.Parse(Console.ReadLine());
                     if ( option2 == 1){
                         AddInfo = true;
                     }else{
                         AddInfo = false;
                     }
+                    Console.ReadLine();
                     Console.Clear();
                 }while(AddInfo);
                 Console.Clear();
