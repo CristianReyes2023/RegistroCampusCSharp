@@ -58,24 +58,56 @@ internal class Program
             if(option == 1){
                 Console.WriteLine("Ingresa los siguientes datos del estudiante: ");
                 int option2;
+                bool AddId = true;
+                bool AddNombre = true;
+                bool AddEmail = true;
+                bool AddEdad = true;
+                bool AddDireccion = true;
+
                 do{
                     Estudiantes estudiantes = new Estudiantes();
                     Console.WriteLine("Ingresa el codigo del estudiante: ");
+                    while(AddId){
                     estudiantes.Id = Console.ReadLine();
-                    if(estudiantes.Id.Length >= 15){
-                        Console.WriteLine("Sobre pasa el numero de caracteres (15)");
-                        Console.ReadLine();
-                        AddInfo = false;
-                        break;
+                        if(estudiantes.Id.Length >= 15){
+                            Console.WriteLine("Excede el numero de caracteres de max 15.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            Console.WriteLine("Ingresa nuevamente el codigo del estudiante: ");
+                        }else if(!int.TryParse(estudiantes.Id,out int numero)){
+                            Console.WriteLine("Agregar solo numeros y no otro tiepo de datos.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            Console.WriteLine("Ingresa nuevamente el codigo del estudiante: ");
+                        }else{
+                            AddId = false;
+                        }
                     }
-                    Console.WriteLine("Ingreso Nombre: ");
+                    Console.WriteLine("Ingresa el nombre del estudiante: ");
+                    while(AddNombre){
                     estudiantes.Nombre = Console.ReadLine();
-                    if(estudiantes.Nombre.Length >= 40){
-                        Console.WriteLine("Sobre pasa el numero de caracteres (40)");
-                        Console.ReadLine();
-                        AddInfo = false;
-                        break;
+                        if(estudiantes.Nombre.Length >= 40){
+                            Console.WriteLine("Excede el numero de caracteres de max 40.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            Console.WriteLine("Ingresa nuevamente el nombre del estudiante: ");
+                        }else if(!Estudiantes.SoloLetras(estudiantes.Nombre)){
+                            Console.WriteLine("Agregar solo letras y no otro tiepo de datos.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            Console.WriteLine("Ingresa nuevamente el nombre del estudiante: ");
+                        }else{
+                            AddId = false;
+                        }
                     }
+                    // Console.WriteLine("Ingreso Nombre: ");
+                    // estudiantes.Nombre = Console.ReadLine();
+                    // if(estudiantes.Nombre.Length >= 40){
+                    //     Console.WriteLine("Sobre pasa el numero de caracteres (40)");
+                    //     Console.ReadLine();
+                    //     AddInfo = false;
+                    //     break;
+                    // }
                     Console.WriteLine("Ingrese Email: ");
                     estudiantes.Email = Console.ReadLine();
                     if(estudiantes.Email.Length >= 40){

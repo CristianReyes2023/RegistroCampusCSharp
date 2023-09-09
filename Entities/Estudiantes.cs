@@ -76,9 +76,13 @@ namespace RegistroEstudiantesC_.Entities
 
 
 
-        public static int Imprimir (int Edad){
-            Console.WriteLine("Ingresa la edad: ");
-            return Edad = int.Parse(Console.ReadLine());
+        public static bool SoloLetras (string NombreEstudiante){
+            foreach (char i in NombreEstudiante){
+                if(!Char.IsLetter(i) && i != ' '){
+                    return false;
+                }
+            }
+            return true;
         }
         
     }

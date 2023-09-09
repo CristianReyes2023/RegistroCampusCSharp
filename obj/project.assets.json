@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\APM02-49\\.nuget\\packages\\": {}
+    "C:\\Users\\fojc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\APM02-49\\Documents\\CristianReyes\\C#\\RegistroCampusCSharp\\RegistroEstudiantesC#.csproj",
+      "projectUniqueName": "E:\\Cristian2\\Cristian\\Programación\\CAMPUSLAND\\C#\\RegistroEstudiantesC#\\RegistroEstudiantesC#.csproj",
       "projectName": "RegistroEstudiantesC#",
-      "projectPath": "c:\\Users\\APM02-49\\Documents\\CristianReyes\\C#\\RegistroCampusCSharp\\RegistroEstudiantesC#.csproj",
-      "packagesPath": "C:\\Users\\APM02-49\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\APM02-49\\Documents\\CristianReyes\\C#\\RegistroCampusCSharp\\obj\\",
+      "projectPath": "E:\\Cristian2\\Cristian\\Programación\\CAMPUSLAND\\C#\\RegistroEstudiantesC#\\RegistroEstudiantesC#.csproj",
+      "packagesPath": "C:\\Users\\fojc\\.nuget\\packages\\",
+      "outputPath": "E:\\Cristian2\\Cristian\\Programación\\CAMPUSLAND\\C#\\RegistroEstudiantesC#\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\APM02-49\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\fojc\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
