@@ -54,17 +54,16 @@ internal class Program
             Console.WriteLine("5. Finalizar registro.");
             Console.WriteLine("Ingresa opción: ");
             int option = int.Parse(Console.ReadLine());
-            int option2;
             Console.Clear();
             if(option == 1){
                 Console.WriteLine("Ingresa los siguientes datos del estudiante.");
-                bool AddId = true;
-                bool AddNombre = true;
-                bool AddEmail = true;
-                bool AddEdad = true;
-                bool AddDireccion = true;
-
+                int agregar;
                 do{
+                    bool AddId = true;
+                    bool AddNombre = true;
+                    bool AddEmail = true;
+                    bool AddEdad = true;
+                    bool AddDireccion = true;
                     Estudiantes estudiantes = new Estudiantes();
                     Console.WriteLine("Ingresa el codigo del estudiante: ");
                     while(AddId){
@@ -117,7 +116,6 @@ internal class Program
                     Console.Clear();
                     Console.WriteLine("Ingrese Edad: ");
                     while(AddEdad){
-                    // estudiantes.Edad = int.Parse(Console.ReadLine());
                     string edadString = Console.ReadLine();
                         if(!int.TryParse(edadString,out int numero)){
                             Console.WriteLine("Agregar solo numeros y no otro tiepo de datos.");
@@ -134,7 +132,7 @@ internal class Program
                     while(AddDireccion){
                     estudiantes.Direccion = Console.ReadLine();
                         if(estudiantes.Direccion.Length >= 35){
-                            Console.WriteLine("Excede el numero de caracteres de max 350.");
+                            Console.WriteLine("Excede el numero de caracteres de max 35.");
                             Console.ReadKey();
                             Console.Clear();
                             Console.WriteLine("Ingresa nuevamente el Direccion del estudiante: ");
@@ -150,16 +148,14 @@ internal class Program
                     Console.WriteLine("Desea agregar otro estudiante:");
                     Console.WriteLine("1. Para agregar otro");
                     Console.WriteLine("2. Para salir.");
-                    option2 = int.Parse(Console.ReadLine());
-                    if ( option2 == 1){
+                    agregar = int.Parse(Console.ReadLine());
+                    if ( agregar == 1){
                         AddInfo = true;
                     }else{
                         AddInfo = false;
                     }
-                    Console.ReadLine();
                     Console.Clear();
                 }while(AddInfo);
-                Console.Clear();
             }
             if ( option == 2){
                 Console.WriteLine("Buscar por: ");
