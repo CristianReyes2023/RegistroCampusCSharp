@@ -41,7 +41,6 @@ internal class Program
         4. Listado Notas FINALES
         */
 
-
         bool AddMenu = true;
         bool AddInfo = true;
         List<Estudiantes> ListaEstudiante = new List<Estudiantes>();
@@ -55,12 +54,12 @@ internal class Program
             Console.WriteLine("4. Imprimir Listado FINAL");
             Console.WriteLine("5. Finalizar registro.");
             Console.WriteLine("Ingresa opción: ");
-            int option = int.Parse(Console.ReadLine());
+            string option = Console.ReadLine();
             Console.Clear();
-            if (option == 1)
+            if (option == "1")
             {
                 Console.WriteLine("Ingresa los siguientes datos del estudiante.");
-                int agregar;
+                string agregar;
                 do
                 {
                     bool AddId = true;
@@ -205,8 +204,8 @@ internal class Program
                     Console.WriteLine("Desea agregar otro estudiante:");
                     Console.WriteLine("1. Para agregar otro");
                     Console.WriteLine("2. Para salir.");
-                    agregar = int.Parse(Console.ReadLine());
-                    if (agregar == 1)
+                    agregar =Console.ReadLine();
+                    if (agregar == "1")
                     {
                         AddInfo = true;
                     }
@@ -217,15 +216,15 @@ internal class Program
                     Console.Clear();
                 } while (AddInfo);
             }
-            if (option == 2)
+            if (option == "2")
             {
                 Console.WriteLine("Agregar o editar notas: ");
                 Console.WriteLine("1. Quices: ");
                 Console.WriteLine("2. Trabajos: ");
                 Console.WriteLine("3. Parciales: ");
-                int option2 = int.Parse(Console.ReadLine());
+                string option2 = Console.ReadLine();
                 Console.Clear();
-                if (option2 == 1)
+                if (option2 == "1")
                 {
                     Console.WriteLine("Ingresa codigo completo: ");
                     string codigoBusqueda = Console.ReadLine();
@@ -246,8 +245,8 @@ internal class Program
                                 Console.WriteLine("2. Quiz 2: ");
                                 Console.WriteLine("3. Quiz 3: ");
                                 Console.WriteLine("4. Quiz 4: ");
-                                int quizCambio = Convert.ToInt32(Console.ReadLine());
-                                if (quizCambio == 1)
+                                string quizCambio = Console.ReadLine();
+                                if (quizCambio == "1")
                                 {
                                     Console.WriteLine("Agrega nota para Quiz 1: ");
                                     bool quizCheck = true;
@@ -269,7 +268,7 @@ internal class Program
                                         }
                                     }
                                 }
-                                if (quizCambio == 2)
+                                if (quizCambio == "2")
                                 {
                                     Console.WriteLine("Agrega nota para Quiz 2: ");
                                     bool quizCheck = true;
@@ -291,7 +290,7 @@ internal class Program
                                         }
                                     }
                                 }
-                                if (quizCambio == 3)
+                                if (quizCambio == "3")
                                 {
                                     Console.WriteLine("Agrega nota para Quiz 3: ");
                                     bool quizCheck = true;
@@ -313,7 +312,7 @@ internal class Program
                                         }
                                     }
                                 }
-                                if (quizCambio == 4)
+                                if (quizCambio == "4")
                                 {
                                     Console.WriteLine("Agrega nota para Quiz 4: ");
                                     bool quizCheck = true;
@@ -340,8 +339,8 @@ internal class Program
                                 Console.WriteLine("Continuar agregando notas de quices: ");
                                 Console.WriteLine("1. Si.");
                                 Console.WriteLine("2. Salir al menu principal");
-                                int notaQuices = Convert.ToInt32(Console.ReadLine());
-                                if (notaQuices == 1)
+                                string notaQuices = Console.ReadLine();
+                                if (notaQuices == "1")
                                 {
                                     AddQuiz = true;
                                 }
@@ -349,7 +348,6 @@ internal class Program
                                 {
                                     AddQuiz = false;
                                 }
-                                Console.ReadKey();
                                 Console.Clear();
                             }
                             break;
@@ -360,7 +358,7 @@ internal class Program
                         }
                     }
                 }
-                if (option2 == 2)
+                if (option2 == "2")
                 {
                     Console.WriteLine("Ingresa codigo completo: ");
                     string codigoBusqueda = Console.ReadLine();
@@ -379,9 +377,9 @@ internal class Program
                                 Console.WriteLine("Trabajo que desea cambiar: ");
                                 Console.WriteLine("1. Trabajo 1: ");
                                 Console.WriteLine("2. Trabajo 2: ");
-                                int trabajoCambio = Convert.ToInt32(Console.ReadLine());
+                                string trabajoCambio = Console.ReadLine();
                                 bool trabajoCheck = true;
-                                if (trabajoCambio == 1)
+                                if (trabajoCambio == "1")
                                 {
                                     Console.WriteLine("Agrega nota para Trabajo 1: ");
                                     while (trabajoCheck)
@@ -402,7 +400,7 @@ internal class Program
                                         }
                                     }
                                 }
-                                if (trabajoCambio == 2)
+                                if (trabajoCambio == "2")
                                 {
                                     Console.WriteLine("Agrega nota para Trabajo 2: ");
                                     while (trabajoCheck)
@@ -428,8 +426,8 @@ internal class Program
                                 Console.WriteLine("Continuar agregando notas de trabajos: ");
                                 Console.WriteLine("1. Si.");
                                 Console.WriteLine("2. Salir al menu principal");
-                                int notaTrabajo = Convert.ToInt32(Console.ReadLine());
-                                if (notaTrabajo == 1)
+                                string notaTrabajo = Console.ReadLine();
+                                if (notaTrabajo == "1")
                                 {
                                     AddTrabajo = true;
                                 }
@@ -448,7 +446,7 @@ internal class Program
                         }
                     }
                 }
-                if (option2 == 3)
+                if (option2 == "3")
                 {
                     Console.WriteLine("Ingresa codigo completo: ");
                     string codigoBusqueda = Console.ReadLine();
@@ -468,9 +466,9 @@ internal class Program
                                 Console.WriteLine("1. Parciales 1: ");
                                 Console.WriteLine("2. Parciales 2: ");
                                 Console.WriteLine("3. Parciales 3: ");
-                                int parcialCambio = Convert.ToInt32(Console.ReadLine());
+                                string parcialCambio = Console.ReadLine();
                                 bool parcialCheck = true;
-                                if (parcialCambio == 1)
+                                if (parcialCambio == "1")
                                 {
                                     Console.WriteLine("Agrega nota para Parcial 1: ");
                                     while (parcialCheck)
@@ -491,7 +489,7 @@ internal class Program
                                         }
                                     }
                                 }
-                                if (parcialCambio == 2)
+                                if (parcialCambio == "2")
                                 {
                                     Console.WriteLine("Agrega nota para Parcial 2: ");
                                     while (parcialCheck)
@@ -512,7 +510,7 @@ internal class Program
                                         }
                                     }
                                 }
-                                if (parcialCambio == 3)
+                                if (parcialCambio == "3")
                                 {
                                     Console.WriteLine("Agrega nota para Parcial 3: ");
                                     while (parcialCheck)
@@ -538,8 +536,8 @@ internal class Program
                                 Console.WriteLine("Continuar agregando notas de parciales: ");
                                 Console.WriteLine("1. Si.");
                                 Console.WriteLine("2. Salir al menu principal");
-                                int notaParciales = Convert.ToInt32(Console.ReadLine());
-                                if (notaParciales == 1)
+                                string notaParciales =Console.ReadLine();
+                                if (notaParciales == "1")
                                 {
                                     AddParciales = true;
                                 }
@@ -559,7 +557,7 @@ internal class Program
                     }
                 }
             }
-            if (option == 3)
+            if (option == "3")
             {
                 Console.WriteLine("Listado General de Estudiantes.");
                 int numeroPaginas = 1;
@@ -582,7 +580,7 @@ internal class Program
                 Console.ReadKey();
                 Console.Clear();
             }
-            if (option == 4)
+            if (option == "4")
             {
                 Console.WriteLine("Listado General de Estudiantes.");
                 int numeroPaginas = 1;
@@ -610,6 +608,10 @@ internal class Program
                 Console.WriteLine("Enter para salir al menu general.");
                 Console.ReadKey();
                 Console.Clear();
+            }
+            if (option == "5")
+            {
+                AddMenu = false;
             }
         }
     }
