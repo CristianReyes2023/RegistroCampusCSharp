@@ -222,29 +222,72 @@ internal class Program
                                     Console.WriteLine("3. Quiz 3: ");
                                     Console.WriteLine("4. Quiz 4: ");
                                     int quizCambio = Convert.ToInt32(Console.ReadLine());
-                                    if (quizCambio == 1)
-                                    {
+                                    if (quizCambio == 1){
                                         Console.WriteLine("Agrega nota para Quiz 1: ");
-                                        ListaEstudiante[i].Quices[0] = Convert.ToInt32(Console.ReadLine());
-                                        Console.Clear();
+                                        bool quizCheck = true;
+                                        while (quizCheck){
+                                            string valorQuiz = Console.ReadLine();
+                                            if(!float.TryParse(valorQuiz, out float numero)){
+                                                Console.WriteLine("Ingrese solo valores numeros.");
+                                                Console.ReadKey();
+                                                Console.Clear();
+                                                Console.WriteLine("Ingresa nota: ");
+                                            }else{
+                                                ListaEstudiante[i].Quices[0] = Convert.ToSingle(valorQuiz);
+                                                quizCheck = false;
+                                            }
+                                        }
                                     }
                                     if (quizCambio == 2)
                                     {
                                         Console.WriteLine("Agrega nota para Quiz 2: ");
-                                        ListaEstudiante[i].Quices[1] = Convert.ToInt32(Console.ReadLine());
-                                        Console.Clear();
+                                        bool quizCheck = true;
+                                        while (quizCheck){
+                                            string valorQuiz = Console.ReadLine();
+                                            if(!float.TryParse(valorQuiz, out float numero)){
+                                                Console.WriteLine("Ingrese solo valores numeros.");
+                                                Console.ReadKey();
+                                                Console.Clear();
+                                                Console.WriteLine("Ingresa nota: ");
+                                            }else{
+                                                ListaEstudiante[i].Quices[1] = Convert.ToSingle(valorQuiz);
+                                                quizCheck = false;
+                                            }
+                                        }
                                     }
                                     if (quizCambio == 3)
                                     {
                                         Console.WriteLine("Agrega nota para Quiz 3: ");
-                                        ListaEstudiante[i].Quices[2] = Convert.ToInt32(Console.ReadLine());
-                                        Console.Clear();
+                                        bool quizCheck = true;
+                                        while (quizCheck){
+                                            string valorQuiz = Console.ReadLine();
+                                            if(!float.TryParse(valorQuiz, out float numero)){
+                                                Console.WriteLine("Ingrese solo valores numeros.");
+                                                Console.ReadKey();
+                                                Console.Clear();
+                                                Console.WriteLine("Ingresa nota: ");
+                                            }else{
+                                                ListaEstudiante[i].Quices[2] = Convert.ToSingle(valorQuiz);
+                                                quizCheck = false;
+                                            }
+                                        }
                                     }
                                     if (quizCambio == 4)
                                     {
-                                        Console.WriteLine("Agrega nota para Quiz 4: ");
-                                        ListaEstudiante[i].Quices[3] = Convert.ToInt32(Console.ReadLine());
-                                        Console.Clear();
+                                        Console.WriteLine("Agrega nota para Quiz 3: ");
+                                        bool quizCheck = true;
+                                        while (quizCheck){
+                                            string valorQuiz = Console.ReadLine();
+                                            if(!float.TryParse(valorQuiz, out float numero)){
+                                                Console.WriteLine("Ingrese solo valores numeros.");
+                                                Console.ReadKey();
+                                                Console.Clear();
+                                                Console.WriteLine("Ingresa nota: ");
+                                            }else{
+                                                ListaEstudiante[i].Quices[3] = Convert.ToSingle(valorQuiz);
+                                                quizCheck = false;
+                                            }
+                                        }
                                     }
                                     Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
                                     Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
@@ -260,7 +303,6 @@ internal class Program
                                     {
                                         AddQuiz = false;
                                     }
-                                    Console.ReadKey();
                                 }
                             }
                         }
@@ -270,8 +312,124 @@ internal class Program
                         Console.WriteLine("No se encontro estudiante, verifica el codigo y ingresalo nuevamente.");
                     }
                 }
-
+                if (option == 2)
+                {
+                    Console.WriteLine("Ingresa codigo completo: ");
+                    string codigoBusqueda = Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                    for (int i = 0; i < ListaEstudiante.Count; i++)
+                    {
+                        bool AddTrabajo = true;
+                        if (ListaEstudiante[i].Id == codigoBusqueda)
+                        {
+                            Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                            Console.ReadKey();
+                            Console.Clear();
+                            while (AddTrabajo)
+                            {
+                                Console.WriteLine("Trabajo que desea cambiar: ");
+                                Console.WriteLine("1. Trabajo 1: ");
+                                Console.WriteLine("2. Trabajo 2: ");
+                                int trabajoCambio = Convert.ToInt32(Console.ReadLine());
+                                if (trabajoCambio == 1)
+                                {
+                                    Console.WriteLine("Agrega nota para Trabajo 1: ");
+                                    ListaEstudiante[i].Trabajos[0] = Convert.ToSingle(Console.ReadLine());
+                                    Console.Clear();
+                                }
+                                if (trabajoCambio == 2)
+                                {
+                                    Console.WriteLine("Agrega nota para Trabajo 2: ");
+                                    ListaEstudiante[i].Trabajos[1] = Convert.ToSingle(Console.ReadLine());
+                                    Console.Clear();
+                                }
+                                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                                Console.WriteLine("Continuar agregando notas de trabajos; ");
+                                Console.WriteLine("1. Si.");
+                                Console.WriteLine("2. Salir al menu principal");
+                                int notaTrabajo = Convert.ToInt32(Console.ReadLine());
+                                if (notaTrabajo == 1)
+                                {
+                                    AddTrabajo = true;
+                                }
+                                else
+                                {
+                                    AddTrabajo = false;
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No se encontro estudiante, verifica el codigo y ingresalo nuevamente.");
+                }
+            }
+            if (option == 3)
+            {
+                Console.WriteLine("Ingresa codigo completo: ");
+                string codigoBusqueda = Console.ReadLine();
+                Console.Clear();
+                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                for (int i = 0; i < ListaEstudiante.Count; i++)
+                {
+                    bool AddParciales = true;
+                    if (ListaEstudiante[i].Id == codigoBusqueda)
+                    {
+                        Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                        Console.ReadKey();
+                        Console.Clear();
+                        while (AddParciales)
+                        {
+                            Console.WriteLine("Parciales que desea cambiar: ");
+                            Console.WriteLine("1. Parciales 1: ");
+                            Console.WriteLine("2. Parciales 2: ");
+                            Console.WriteLine("3. Parciales 3: ");
+                            int trabajoCambio = Convert.ToInt32(Console.ReadLine());
+                            if (trabajoCambio == 1)
+                            {
+                                Console.WriteLine("Agrega nota para Trabajo 1: ");
+                                ListaEstudiante[i].Quices[0] = Convert.ToSingle(Console.ReadLine());
+                                Console.Clear();
+                            }
+                            if (trabajoCambio == 2)
+                            {
+                                Console.WriteLine("Agrega nota para Trabajo 2: ");
+                                ListaEstudiante[i].Quices[1] = Convert.ToSingle(Console.ReadLine());
+                                Console.Clear();
+                            }
+                            if (trabajoCambio == 3)
+                            {
+                                Console.WriteLine("Agrega nota para Trabajo 3: ");
+                                ListaEstudiante[i].Quices[2] = Convert.ToSingle(Console.ReadLine());
+                                Console.Clear();
+                            }
+                            Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                            Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                            Console.WriteLine("Continuar agregando notas de quices; ");
+                            Console.WriteLine("1. Si.");
+                            Console.WriteLine("2. Salir al menu principal");
+                            int notaParciales = Convert.ToInt32(Console.ReadLine());
+                            if (notaParciales == 1)
+                            {
+                                AddParciales = true;
+                            }
+                            else
+                            {
+                                AddParciales = false;
+                            }
+                            Console.ReadKey();
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("No se encontro estudiante, verifica el codigo y ingresalo nuevamente.");
             }
         }
+
     }
 }
