@@ -79,7 +79,8 @@ internal class Program
                         {
                             estudiantes.Id = Console.ReadLine();
                             if (ListaEstudiante.Count != 0)
-                            {   int contador = 0;
+                            {
+                                int contador = 0;
                                 for (int i = 0; i < ListaEstudiante.Count; i++)
                                 {
                                     if (ListaEstudiante[i].Id == estudiantes.Id)
@@ -90,7 +91,7 @@ internal class Program
                                         Console.WriteLine("Ingresa el codigo del estudiante: ");
                                         contador++;
                                     }
-                                    else if(i == ListaEstudiante.Count-1 && contador==0)
+                                    else if (i == ListaEstudiante.Count - 1 && contador == 0)
                                     {
                                         AddIdCheck = false;
                                     }
@@ -558,25 +559,57 @@ internal class Program
                     }
                 }
             }
-            if (option == 3){
+            if (option == 3)
+            {
                 Console.WriteLine("Listado General de Estudiantes.");
                 int numeroPaginas = 1;
                 int contadorEstudiantes = 0;
                 Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
-                for(int i = 0; i < ListaEstudiante.Count;i++){
+                for (int i = 0; i < ListaEstudiante.Count; i++)
+                {
                     Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
                     contadorEstudiantes++;
-                    if(contadorEstudiantes == 10){
+                    if (contadorEstudiantes == 10)
+                    {
                         numeroPaginas++;
-                        contadorEstudiantes=0;
+                        contadorEstudiantes = 0;
                         Console.ReadKey();
                         Console.Clear();
                         Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
                     }
                 }
-            Console.WriteLine("Enter para salir al menu general.");
-            Console.ReadKey();
-            Console.Clear();
+                Console.WriteLine("Enter para salir al menu general.");
+                Console.ReadKey();
+                Console.Clear();
+            }
+            if (option == 4)
+            {
+                Console.WriteLine("Listado General de Estudiantes.");
+                int numeroPaginas = 1;
+                int contadorEstudiantes = 0;
+                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-15} {6,-15} {7,-15} {8,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Def. Quices", "Def. Trabajos", "Def. Parciales","Nota Final");
+                for (int i = 0; i < ListaEstudiante.Count; i++)
+                {   
+                    float defQuices = (ListaEstudiante[i].Quices[0] + ListaEstudiante[i].Quices[1] + ListaEstudiante[i].Quices[2]+ListaEstudiante[i].Quices[3])/4;
+                    float defTrabajos = (ListaEstudiante[i].Trabajos[0] + ListaEstudiante[i].Trabajos[1])/2;
+                    float defParciales = (ListaEstudiante[i].Parciales[0]+ ListaEstudiante[i].Parciales[1] + ListaEstudiante[i].Parciales[2])/3;
+                    double notaFinal = (defQuices*0.25) + (defTrabajos*0.15) + (defParciales*0.6);
+                    string notaFinalFormato = notaFinal.ToString("N2");
+
+                    Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-15} {7,-15} {8,-15}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion,defQuices, defTrabajos, defParciales,notaFinalFormato);
+                    contadorEstudiantes++;
+                    if (contadorEstudiantes == 10)
+                    {
+                        numeroPaginas++;
+                        contadorEstudiantes = 0;
+                        Console.ReadKey();
+                        Console.Clear();
+                        Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15} {8,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Def. Quices", "Def. Trabajos", "Def. Parciales","Nota Final");
+                    }
+                }
+                Console.WriteLine("Enter para salir al menu general.");
+                Console.ReadKey();
+                Console.Clear();
             }
         }
     }
