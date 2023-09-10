@@ -349,12 +349,13 @@ internal class Program
                                     AddQuiz = false;
                                 }
                                 Console.ReadKey();
+                                Console.Clear();
                             }
                             break;
                         }
                         if (i == ListaEstudiante.Count - 1)
                         {
-                            Console.WriteLine("No se encontro HOLIIIIII2");
+                            Console.WriteLine("No se encontro estudiante");
                         }
                     }
                 }
@@ -396,6 +397,7 @@ internal class Program
                                         {
                                             ListaEstudiante[i].Trabajos[0] = Convert.ToSingle(valorTrabajo);
                                             trabajoCheck = false;
+                                            Console.Clear();
                                         }
                                     }
                                 }
@@ -416,6 +418,7 @@ internal class Program
                                         {
                                             ListaEstudiante[i].Trabajos[1] = Convert.ToSingle(valorTrabajo);
                                             trabajoCheck = false;
+                                            Console.Clear();
                                         }
                                     }
                                 }
@@ -434,12 +437,13 @@ internal class Program
                                     AddTrabajo = false;
                                 }
                                 Console.ReadKey();
+                                Console.Clear();
                             }
                             break;
                         }
                         if (i == ListaEstudiante.Count - 1)
                         {
-                            Console.WriteLine("No se encontro HOLIIIIII2");
+                            Console.WriteLine("No se encontro estudiante.");
                         }
                     }
                 }
@@ -482,6 +486,7 @@ internal class Program
                                         {
                                             ListaEstudiante[i].Parciales[0] = Convert.ToSingle(valorParcial);
                                             parcialCheck = false;
+                                            Console.Clear();
                                         }
                                     }
                                 }
@@ -502,6 +507,7 @@ internal class Program
                                         {
                                             ListaEstudiante[i].Parciales[1] = Convert.ToSingle(valorParcial);
                                             parcialCheck = false;
+                                            Console.Clear();
                                         }
                                     }
                                 }
@@ -522,6 +528,7 @@ internal class Program
                                         {
                                             ListaEstudiante[i].Parciales[2] = Convert.ToSingle(valorParcial);
                                             parcialCheck = false;
+                                            Console.Clear();
                                         }
                                     }
                                 }
@@ -540,19 +547,36 @@ internal class Program
                                     AddParciales = false;
                                 }
                                 Console.ReadKey();
+                                Console.Clear();
                             }
                             break;
                         }
                         if (i == ListaEstudiante.Count - 1)
                         {
-                            Console.WriteLine("No se encontro HOLIIIIII3");
+                            Console.WriteLine("No se encontro estudiante.");
                         }
                     }
                 }
-                else
-                {
-                    Console.WriteLine("No se encontro estudiante, verifica el codigo y ingresalo nuevamente.");
+            }
+            if (option == 3){
+                Console.WriteLine("Listado General de Estudiantes.");
+                int numeroPaginas = 1;
+                int contadorEstudiantes = 0;
+                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                for(int i = 0; i < ListaEstudiante.Count;i++){
+                    Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                    contadorEstudiantes++;
+                    if(contadorEstudiantes == 10){
+                        numeroPaginas++;
+                        contadorEstudiantes=0;
+                        Console.ReadKey();
+                        Console.Clear();
+                        Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                    }
                 }
+            Console.WriteLine("Enter para salir al menu general.");
+            Console.ReadKey();
+            Console.Clear();
             }
         }
     }
