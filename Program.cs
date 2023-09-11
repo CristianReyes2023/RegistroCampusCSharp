@@ -108,7 +108,7 @@ internal class Program
                             Console.Clear();
                             Console.WriteLine("Ingresa nuevamente el codigo del estudiante: ");
                         }
-                        else if (!int.TryParse(estudiantes.Id, out int numero))
+                        else if (!double.TryParse(estudiantes.Id, out double numero))
                         {
                             Console.WriteLine("Agregar solo numeros y no otro tipo de datos.");
                             Console.ReadKey();
@@ -204,7 +204,7 @@ internal class Program
                     Console.WriteLine("Desea agregar otro estudiante:");
                     Console.WriteLine("1. Para agregar otro");
                     Console.WriteLine("2. Para salir.");
-                    agregar =Console.ReadLine();
+                    agregar = Console.ReadLine();
                     if (agregar == "1")
                     {
                         AddInfo = true;
@@ -229,13 +229,16 @@ internal class Program
                     Console.WriteLine("Ingresa codigo completo: ");
                     string codigoBusqueda = Console.ReadLine();
                     Console.Clear();
-                    Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                    Console.WriteLine(("").PadRight(190, '-'));
+                    Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-9}|{7,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                    Console.WriteLine(("").PadRight(190, '-'));
                     for (int i = 0; i < ListaEstudiante.Count; i++)
                     {
                         bool AddQuiz = true;
                         if (ListaEstudiante[i].Id == codigoBusqueda)
                         {
-                            Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                            Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                            Console.WriteLine(("").PadRight(190, '-'));
                             Console.ReadKey();
                             Console.Clear();
                             while (AddQuiz)
@@ -334,8 +337,11 @@ internal class Program
                                         }
                                     }
                                 }
-                                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
-                                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                                Console.WriteLine(("").PadRight(190, '-'));
+                                Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-9}|{7,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                                Console.WriteLine(("").PadRight(190, '-'));
+                                Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                                Console.WriteLine(("").PadRight(190, '-'));
                                 Console.WriteLine("Continuar agregando notas de quices: ");
                                 Console.WriteLine("1. Si.");
                                 Console.WriteLine("2. Salir al menu principal");
@@ -363,13 +369,16 @@ internal class Program
                     Console.WriteLine("Ingresa codigo completo: ");
                     string codigoBusqueda = Console.ReadLine();
                     Console.Clear();
-                    Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                    Console.WriteLine(("").PadRight(190, '-'));
+                    Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-9}|{7,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                    Console.WriteLine(("").PadRight(190, '-'));
                     for (int i = 0; i < ListaEstudiante.Count; i++)
                     {
                         bool AddTrabajo = true;
                         if (ListaEstudiante[i].Id == codigoBusqueda)
                         {
-                            Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                            Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                            Console.WriteLine(("").PadRight(190, '-'));
                             Console.ReadKey();
                             Console.Clear();
                             while (AddTrabajo)
@@ -421,8 +430,11 @@ internal class Program
                                         }
                                     }
                                 }
-                                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
-                                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                                Console.WriteLine(("").PadRight(190, '-'));
+                                Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-9}|{7,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                                Console.WriteLine(("").PadRight(190, '-'));
+                                Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                                Console.WriteLine(("").PadRight(190, '-'));
                                 Console.WriteLine("Continuar agregando notas de trabajos: ");
                                 Console.WriteLine("1. Si.");
                                 Console.WriteLine("2. Salir al menu principal");
@@ -451,13 +463,16 @@ internal class Program
                     Console.WriteLine("Ingresa codigo completo: ");
                     string codigoBusqueda = Console.ReadLine();
                     Console.Clear();
-                    Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                    Console.WriteLine(("").PadRight(190, '-'));
+                    Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-9}|{7,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                    Console.WriteLine(("").PadRight(190, '-'));
                     for (int i = 0; i < ListaEstudiante.Count; i++)
                     {
                         bool AddParciales = true;
                         if (ListaEstudiante[i].Id == codigoBusqueda)
                         {
-                            Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                            Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                            Console.WriteLine(("").PadRight(190, '-'));
                             Console.ReadKey();
                             Console.Clear();
                             while (AddParciales)
@@ -531,12 +546,15 @@ internal class Program
                                         }
                                     }
                                 }
-                                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
-                                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                                Console.WriteLine(("").PadRight(190, '-'));
+                                Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-9}|{7,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                                Console.WriteLine(("").PadRight(190, '-'));
+                                Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                                Console.WriteLine(("").PadRight(190, '-'));
                                 Console.WriteLine("Continuar agregando notas de parciales: ");
                                 Console.WriteLine("1. Si.");
                                 Console.WriteLine("2. Salir al menu principal");
-                                string notaParciales =Console.ReadLine();
+                                string notaParciales = Console.ReadLine();
                                 if (notaParciales == "1")
                                 {
                                     AddParciales = true;
@@ -562,10 +580,12 @@ internal class Program
                 Console.WriteLine("Listado General de Estudiantes.");
                 int numeroPaginas = 1;
                 int contadorEstudiantes = 0;
-                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                Console.WriteLine(("").PadRight(190, '-'));
+                Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-9}|{7,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
                 for (int i = 0; i < ListaEstudiante.Count; i++)
                 {
-                    Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-4} {6,-4} {7,-4} {8,-4} {9,-4} {10,-4} {11,-4} {12,-4} {13,-4}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
+                    Console.WriteLine(("").PadRight(190, '-'));
+                    Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
                     contadorEstudiantes++;
                     if (contadorEstudiantes == 10)
                     {
@@ -573,9 +593,11 @@ internal class Program
                         contadorEstudiantes = 0;
                         Console.ReadKey();
                         Console.Clear();
-                        Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
+                        Console.WriteLine(("").PadRight(190, '-'));
+                        Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-9}|{7,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Quices", "Trabajos", "Parciales");
                     }
                 }
+                Console.WriteLine(("").PadRight(190, '-'));
                 Console.WriteLine("Enter para salir al menu general.");
                 Console.ReadKey();
                 Console.Clear();
@@ -585,16 +607,17 @@ internal class Program
                 Console.WriteLine("Listado General de Estudiantes.");
                 int numeroPaginas = 1;
                 int contadorEstudiantes = 0;
-                Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-15} {6,-15} {7,-15} {8,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Def. Quices", "Def. Trabajos", "Def. Parciales","Nota Final");
+                Console.WriteLine(("").PadRight(208, '-'));
+                Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-15}|{6,-15}|{7,-15}|{8,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Def. Quices", "Def. Trabajos", "Def. Parciales", "Nota Final");
                 for (int i = 0; i < ListaEstudiante.Count; i++)
-                {   
-                    float defQuices = (ListaEstudiante[i].Quices[0] + ListaEstudiante[i].Quices[1] + ListaEstudiante[i].Quices[2]+ListaEstudiante[i].Quices[3])/4;
-                    float defTrabajos = (ListaEstudiante[i].Trabajos[0] + ListaEstudiante[i].Trabajos[1])/2;
-                    float defParciales = (ListaEstudiante[i].Parciales[0]+ ListaEstudiante[i].Parciales[1] + ListaEstudiante[i].Parciales[2])/3;
-                    double notaFinal = (defQuices*0.25) + (defTrabajos*0.15) + (defParciales*0.6);
+                {
+                    float defQuices = (ListaEstudiante[i].Quices[0] + ListaEstudiante[i].Quices[1] + ListaEstudiante[i].Quices[2] + ListaEstudiante[i].Quices[3]) / 4;
+                    float defTrabajos = (ListaEstudiante[i].Trabajos[0] + ListaEstudiante[i].Trabajos[1]) / 2;
+                    float defParciales = (ListaEstudiante[i].Parciales[0] + ListaEstudiante[i].Parciales[1] + ListaEstudiante[i].Parciales[2]) / 3;
+                    double notaFinal = (defQuices * 0.25) + (defTrabajos * 0.15) + (defParciales * 0.6);
                     string notaFinalFormato = notaFinal.ToString("N2");
-
-                    Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-15} {7,-15} {8,-15}", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion,defQuices, defTrabajos, defParciales,notaFinalFormato);
+                    Console.WriteLine(("").PadRight(208, '-'));
+                    Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-15}|{6,-15}|{7,-15}|{8,-15}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, defQuices, defTrabajos, defParciales, notaFinalFormato);
                     contadorEstudiantes++;
                     if (contadorEstudiantes == 10)
                     {
@@ -602,9 +625,11 @@ internal class Program
                         contadorEstudiantes = 0;
                         Console.ReadKey();
                         Console.Clear();
-                        Console.WriteLine("{0,-20} {1,-40} {2,-40} {3,-5} {4,-35} {5,-19} {6,-9} {7,-15} {8,-15}", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Def. Quices", "Def. Trabajos", "Def. Parciales","Nota Final");
+                        Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-15}|{7,-15}|{8,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Def. Quices", "Def. Trabajos", "Def. Parciales", "Nota Final");
                     }
+                    
                 }
+                Console.WriteLine(("").PadRight(208, '-'));
                 Console.WriteLine("Enter para salir al menu general.");
                 Console.ReadKey();
                 Console.Clear();

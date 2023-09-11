@@ -5,15 +5,18 @@ using System.Threading.Tasks;
 
 namespace RegistroEstudiantesC_.Entities
 {
+    /// <summary>
+    /// Crea una clase que está compuesta por información personal del estudiante y de y adicionalmente se crean las listas para agregar notas de Quices, Trabajos y Parciales.
+    /// </summary>
     public class Estudiantes
     {
-        //ATTRIBUTES
-        //defined attributes for each student class
-        private string id;//Long max 15 characters
-        private string nombre;//Long max 40 characters
-        private string email;//Long max 40 characters
+        //ATRIBUTOS
+        //Definición de especificaciones y tamaños
+        private string id;//Longitud maximo 15 caracteres
+        private string nombre;//Longitud maximo 40 caracteres
+        private string email;//Longitud maximo 40 caracteres
         private int edad;
-        private string  direccion;//Long max 35 characters
+        private string  direccion;//Longitud maximo 35 caracteres
 
         private List<float> quices;
         private List<float> trabajos;
@@ -73,19 +76,13 @@ namespace RegistroEstudiantesC_.Entities
             this.parciales = parciales;
 
         }
-
-
-
+        /// <summary>
+        /// Este metodo permite verificar que los nombre de los estudiantes no contenga ningún numero y acepta los espacios en blanco
+        /// </summary>
+        /// <param name="NombreEstudiante">Nombre de estudiante</param>
+        /// <returns>Un booleano para después verificación</returns>
         public static bool SoloLetras (string NombreEstudiante){
             foreach (char i in NombreEstudiante){
-                if(!Char.IsLetter(i) && i != ' '){
-                    return false;
-                }
-            }
-            return true;
-        }
-        public static bool SoloNumeros (string EdadEstudiante){
-            foreach (char i in EdadEstudiante){
                 if(!Char.IsLetter(i) && i != ' '){
                     return false;
                 }
