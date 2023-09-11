@@ -1,4 +1,6 @@
-# Ejercicio Notas C#
+# Ejercicio Notas C# 
+
+## Presentado por : CRISTIAN LEONARDO REYES MORENO
 
 Un profesor del área de matemáticas, necesita generar un programa que le permita registrar los estudiantes que se encuentran matriculados, la información que el docente posee de cada estudiante es la siguiente:
 
