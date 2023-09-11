@@ -29,7 +29,7 @@ internal class Program
         /*
         MENU
         1. Ingresar estudiante (se ingresa cantidad de N estudiantes)
-        2. Buscar estudiante (
+        2. Agregar y editar notas: (
             2.1 Ingresar Quiz
                 2.1.1 Que quiz quiere ingresar Q1,Q2 y Q3
             2.2 Ingresar Trabajos
@@ -239,6 +239,7 @@ internal class Program
                         {
                             Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
                             Console.WriteLine(("").PadRight(190, '-'));
+                            Console.WriteLine("Enter para continuar...");
                             Console.ReadKey();
                             Console.Clear();
                             while (AddQuiz)
@@ -379,6 +380,7 @@ internal class Program
                         {
                             Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
                             Console.WriteLine(("").PadRight(190, '-'));
+                            Console.WriteLine("Enter para continuar...");
                             Console.ReadKey();
                             Console.Clear();
                             while (AddTrabajo)
@@ -447,7 +449,6 @@ internal class Program
                                 {
                                     AddTrabajo = false;
                                 }
-                                Console.ReadKey();
                                 Console.Clear();
                             }
                             break;
@@ -473,6 +474,7 @@ internal class Program
                         {
                             Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-4}|{6,-4}|{7,-4}|{8,-4}|{9,-4}|{10,-4}|{11,-4}|{12,-4}|{13,-5}|", ListaEstudiante[i].Id, ListaEstudiante[i].Nombre, ListaEstudiante[i].Email, ListaEstudiante[i].Edad, ListaEstudiante[i].Direccion, ListaEstudiante[i].Quices[0], ListaEstudiante[i].Quices[1], ListaEstudiante[i].Quices[2], ListaEstudiante[i].Quices[3], ListaEstudiante[i].Trabajos[0], ListaEstudiante[i].Trabajos[1], ListaEstudiante[i].Parciales[0], ListaEstudiante[i].Parciales[1], ListaEstudiante[i].Parciales[2]);
                             Console.WriteLine(("").PadRight(190, '-'));
+                            Console.WriteLine("Enter para continuar...");
                             Console.ReadKey();
                             Console.Clear();
                             while (AddParciales)
@@ -563,7 +565,6 @@ internal class Program
                                 {
                                     AddParciales = false;
                                 }
-                                Console.ReadKey();
                                 Console.Clear();
                             }
                             break;
@@ -627,7 +628,6 @@ internal class Program
                         Console.Clear();
                         Console.WriteLine("|{0,-18}|{1,-40}|{2,-40}|{3,-5}|{4,-35}|{5,-19}|{6,-15}|{7,-15}|{8,-15}|", "Codigo estudiante", "Nombre estudiante", "Email Estudiante", "Edad", "Dirección estudiante", "Def. Quices", "Def. Trabajos", "Def. Parciales", "Nota Final");
                     }
-                    
                 }
                 Console.WriteLine(("").PadRight(208, '-'));
                 Console.WriteLine("Enter para salir al menu general.");
